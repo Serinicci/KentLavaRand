@@ -4,7 +4,7 @@ import cv2 as cv
 cap = cv.VideoCapture(0)
 
 if not cap.isOpened():
-    raise IOError("Cannot Open Webcam")
+    print("Cannot Open Webcam")
     exit()
 
 while True:
@@ -12,7 +12,7 @@ while True:
     
     cv.imshow('Input', frame)
     
-    if cv.waitKey(1) & 0xFF == ord('q'):
+    if cv.waitKey(1) == ord('q'):
         break
     
 cap.release()
